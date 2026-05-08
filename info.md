@@ -5,8 +5,8 @@
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
-# Custom brand icons
-Custom brand icons for Home Assistant
+# Yakup Brand Icons
+Personal Home Assistant brand icon pack based on Custom brand icons.
 
 ![logo](https://res.cloudinary.com/dcongin7u/image/upload/v1707320837/cbi-logo.jpg)
 
@@ -44,11 +44,11 @@ entities:
     icon: 'phu:play'
     name: play 2
 show_header_toggle: false
-title: Custom brand icons
+title: Yakup Brand Icons
 type: entities
 ```
 
 A system restart is required after this step
 
 # Icons/Brands Available
-See the full list on [Github](https://github.com/elax46/custom-brand-icons#iconsbrands-available).
+See the full list in this repository README.

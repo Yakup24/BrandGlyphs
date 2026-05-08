@@ -3,43 +3,62 @@ const path = require("path");
 
 const ICONS_DIR = path.join(__dirname, "icon-svg");
 const DIST_DIR = path.join(__dirname, "dist");
-if (!fs.existsSync(DIST_DIR)) fs.mkdirSync(DIST_DIR);
+const DIST_FILE = path.join(DIST_DIR, "custom-brand-icons.js");
+const ICON_NAME_RE = /^[^\s\\/][^\\/]*$/u;
 
-function extractPath(svgContent) {
-  const m = svgContent.match(/<path[^>]*d="([^"]+)"/);
-  return m ? m[1] : "";
+if (!fs.existsSync(DIST_DIR)) fs.mkdirSync(DIST_DIR, { recursive: true });
+
+function extractPaths(svgContent) {
+  return [...svgContent.matchAll(/<path\b[^>]*\sd=(["'])(.*?)\1/gs)]
+    .map((match) => match[2].trim())
+    .filter(Boolean);
 }
 
 function extractViewBox(svgContent) {
-  const m = svgContent.match(/<svg.+?viewBox="([^"]+)"/);
-  if (m) {
-    const parts = m[1].split(" ").map(Number);
-    if (parts.length === 4) {
-      return parts;
-    } else {
-      throw new Error("Invalid viewBox format: " + m[1]);
-    }
+  const m = svgContent.match(/<svg\b[^>]*\sviewBox=(["'])(.*?)\1/s);
+  if (!m) return [0, 0, 24, 24];
+
+  const parts = m[2].trim().split(/[\s,]+/).map(Number);
+  if (parts.length !== 4 || parts.some((part) => !Number.isFinite(part))) {
+    throw new Error(`Invalid viewBox format: ${m[2]}`);
   }
-  // Fallback to default viewBox if not found
-  return [0, 0, 24, 24];
+  return parts;
 }
 
-const files = fs.readdirSync(ICONS_DIR).filter(f => f.endsWith(".svg"));
+function iconNameFromFile(file) {
+  const name = path.basename(file, ".svg");
+  if (!ICON_NAME_RE.test(name)) {
+    throw new Error(`Invalid icon filename: ${file}`);
+  }
+  return name;
+}
 
+const files = fs.readdirSync(ICONS_DIR)
+  .filter((file) => file.endsWith(".svg"))
+  .sort((a, b) => a.localeCompare(b));
+
+const failures = [];
 let output = "var icons = {\n";
 
-files.forEach(file => {
+for (const file of files) {
   try {
-    const name = path.basename(file, ".svg");
+    const name = iconNameFromFile(file);
     const svgContent = fs.readFileSync(path.join(ICONS_DIR, file), "utf8");
-    const pathData = extractPath(svgContent);
+    const paths = extractPaths(svgContent);
+    if (!paths.length) throw new Error("No path data found");
     const viewBox = extractViewBox(svgContent);
 
-    output += `  "${name}":[${viewBox.join(",")},${JSON.stringify(pathData)}],\n`;
+    output += `  "${name}":[${viewBox.join(",")},${JSON.stringify(paths.join(" "))}],\n`;
   } catch (err) {
-    console.log(`❌ Failed to process ${file}: ${err.message}`);
+    failures.push(`${file}: ${err.message}`);
   }
-});
+}
+
+if (failures.length) {
+  console.error("Build failed:");
+  for (const failure of failures) console.error(` - ${failure}`);
+  process.exit(1);
+}
 
 output += "};\n\n";
 
@@ -71,10 +90,8 @@ window.customIcons = window.customIcons || {};
 window.customIcons["phu"] = { getIcon, getIconList };
 `;
 
-fs.writeFileSync(path.join(DIST_DIR, "custom-brand-icons.js"), output);
+fs.writeFileSync(DIST_FILE, output);
 
-console.log("✅ Build completed");
-console.log("📁 Generated file: dist/custom-brand-icons.js");
-console.log("🔢 Total icons:", files.length);
-
-
+console.log("Build completed");
+console.log("Generated file: dist/custom-brand-icons.js");
+console.log("Total icons:", files.length);

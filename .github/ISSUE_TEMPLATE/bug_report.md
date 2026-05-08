@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Help me improve Custom brand icons
+about: Help me improve Yakup Brand Icons
 title: ''
 labels: bug
 assignees: elax46

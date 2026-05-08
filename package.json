@@ -1,5 +1,5 @@
 {
-  "name": "custom-brand-icons",
+  "name": "yakup-brand-icons",
   "private": true,
   "type": "module",
   "devDependencies": {
@@ -10,6 +10,9 @@
     "svgo": "^4.0.1"
   },
   "scripts": {
+    "build": "node custom-icons-builder.cjs",
+    "validate": "node script/validate-project.mjs",
+    "test": "npm run validate && npm run build",
     "normalize": "node script/normalize-icons.mjs",
     "clean": "node script/normalize-icons.mjs --clean",
     "vrt": "node script/normalize-icons.mjs --vrt",

@@ -1,19 +1,24 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/elax46/custom-brand-icons)](https://github.com/elax46/custom-brand-icons/releases/latest)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Yakup24/yakup-brand-icons)](https://github.com/Yakup24/yakup-brand-icons/releases/latest)
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-![GitHub file size in bytes](https://img.shields.io/github/size/elax46/custom-brand-icons/dist/custom-brand-icons.js?label=plugin%20size)
-![GitHub last commit](https://img.shields.io/github/last-commit/elax46/custom-brand-icons)
+![GitHub file size in bytes](https://img.shields.io/github/size/Yakup24/yakup-brand-icons/dist/custom-brand-icons.js?label=plugin%20size)
+![GitHub last commit](https://img.shields.io/github/last-commit/Yakup24/yakup-brand-icons)
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-# Custom brand icons
+# Yakup Brand Icons
+
+Personal Home Assistant brand icon pack based on Custom brand icons.
+
+This fork keeps the Home Assistant icon prefix `phu:` for compatibility, while
+adding cleaner project metadata, validation, and maintenance tooling.
 
 ![logo](https://res.cloudinary.com/dcongin7u/image/upload/v1775920018/cbi-logo_pho7hp.png)
 
-#### Custom brand icons use the prefix `phu:`
+#### Yakup Brand Icons use the prefix `phu:`
 #### Append Name (of the icon) after `phu:`
 - Example: `phu:eggs` <img src="/icon-svg/eggs.svg" title="Preview" alt="Preview" width="24"/>
 - Example: `phu:chicken` <img src="/icon-svg/chicken.svg" title="Preview" alt="Preview" width="24"/>
@@ -35,10 +40,10 @@ Give it a try and let me know what you think! ⭐
 
 # Icon Requests
 
-Want an icon? Open a [custom icon request](https://github.com/elax46/custom-brand-icons/issues/new?assignees=elax46&labels=icon-request&template=insertion-of-new-icons.md&title=Custom+Icon+request) or [contribute to the project](#developer-workflow).
+Want an icon? Open an icon request in this repository or [contribute to the project](#developer-workflow).
 -  Provide a **svg file and jpg logo of your request (we also are not mind readers and dont know every icon globaly so if no name is present please add it or it will be ignored** and a image along with your request.
 -  links to SVG's or Images will be ignored, you must upload the files into your request and they must be visible in post. `IGNORING THIS SIMPLE REQUEST WILL RESULT IN YOUR REQUEST BEING IGNORED AND CLOSED`  (if you can not be bothered to spend a few minutes doing this, why should we spend time looking for it and making it).
--  For those who [made their own icons](#developer-workflow), open pull requests on the **[dev branch](https://github.com/elax46/custom-brand-icons/pulls)**.
+-  For those who [made their own icons](#developer-workflow), open pull requests from a feature branch.
 
 ### Make sure to [install](#installation-methods) `custom-brand-icons.js` into `configuration.yaml` or `ui-lovelace.yaml`
 
@@ -62,8 +67,8 @@ To view all available icons, you can go to the following address. The icon viewe
 
 #### HACS
 
-We recommend installing Custom brand icons card via [Home Assistant Community Store](https://hacs.xyz)
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=elax46&repository=custom-brand-icons&category=frontend)
+We recommend installing Yakup Brand Icons via [Home Assistant Community Store](https://hacs.xyz)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Yakup24&repository=yakup-brand-icons&category=frontend)
 
 After installing through HACS:
 1. Add the following lines to your `configuration.yaml`
@@ -111,7 +116,7 @@ To add custom repositories please follow [this guide](https://hacs.xyz/docs/faq/
 
 # User Manual
 
-#### Custom brand icons use the prefix `phu:`
+#### Yakup Brand Icons use the prefix `phu:`
 #### Append Name (of the icon) after `phu:`
 - Example: `phu:eggs` <img src="/icon-svg/eggs.svg" title="Preview" alt="Preview" width="24"/>
 - Example: `phu:chicken` <img src="/icon-svg/chicken.svg" title="Preview" alt="Preview" width="24"/>
@@ -130,7 +135,7 @@ entities:
     icon: 'phu:play'
     name: play 2
 show_header_toggle: false
-title: Custom brand icons
+title: Yakup Brand Icons
 type: entities
 ```
 
@@ -163,7 +168,7 @@ Some addons (including official) have had some [cache issues since 2024.1.1]([ht
 2. Select on *Integrations*.
 3. From the top header bar (Integrations, Frontend), select *Frontend*.
 4. Search *custom-brand-icons* on the search bar.
-5. Select *Custom brand icons*.
+5. Select *Yakup Brand Icons*.
 6. From the top right, select the 3 vertical dots which opens a dropdown menu.
 7. Select *Redownload*.
 8. **Hard reload** browser.
@@ -174,7 +179,7 @@ Some addons (including official) have had some [cache issues since 2024.1.1]([ht
 3. This should bring you back to /hacs/frontend
 4. From the top right, select the 3 vertical dots which opens a dropdown menu.
 5. Select on *Custom repositories*.
-6. Find *Custom brand icons* and select it.
+6. Find *Yakup Brand Icons* and select it.
 7. On the bottom right, select the big blue *Download* icon.
 8. **Hard reload** browser.
 
@@ -288,5 +293,5 @@ Thanks to the work of @SoulSolistice, a `normalize-icons.mjs` has been introduce
 > **Contributions Rules:** All Pull Requests must be targeted to the `dev` branch. 
 > PRs opened against `main` will be automatically closed by our bot.
 
-After adding your svg icon in `icon-svg` folder . Open pull request on the **[dev branch](https://github.com/elax46/custom-brand-icons/pulls)**. You should create a **new feature branch** on your fork (e.g., `feat/add-new-icon`) and submit your PR from there.
+After adding your svg icon in `icon-svg` folder, open a pull request from a **new feature branch** on your fork (e.g., `feat/add-new-icon`).
 
