@@ -1,15 +1,15 @@
 
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-41BDF5.svg)](https://github.com/hacs/integration)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Yakup24/yakup-brand-icons)](https://github.com/Yakup24/yakup-brand-icons/releases/latest)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/Yakup24/brand-glyphs)](https://github.com/Yakup24/brand-glyphs/releases/latest)
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-![GitHub file size in bytes](https://img.shields.io/github/size/Yakup24/yakup-brand-icons/dist/custom-brand-icons.js?label=plugin%20size)
-![GitHub last commit](https://img.shields.io/github/last-commit/Yakup24/yakup-brand-icons)
+![GitHub file size in bytes](https://img.shields.io/github/size/Yakup24/brand-glyphs/dist/custom-brand-icons.js?label=plugin%20size)
+![GitHub last commit](https://img.shields.io/github/last-commit/Yakup24/brand-glyphs)
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
 [cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
-# Yakup Brand Icons
+# BrandGlyphs
 
 Personal Home Assistant brand icon pack based on Custom brand icons.
 
@@ -18,7 +18,7 @@ adding cleaner project metadata, validation, and maintenance tooling.
 
 ![logo](https://res.cloudinary.com/dcongin7u/image/upload/v1775920018/cbi-logo_pho7hp.png)
 
-#### Yakup Brand Icons use the prefix `phu:`
+#### BrandGlyphs uses the prefix `phu:`
 #### Append Name (of the icon) after `phu:`
 - Example: `phu:eggs` <img src="/icon-svg/eggs.svg" title="Preview" alt="Preview" width="24"/>
 - Example: `phu:chicken` <img src="/icon-svg/chicken.svg" title="Preview" alt="Preview" width="24"/>
@@ -67,8 +67,8 @@ To view all available icons, you can go to the following address. The icon viewe
 
 #### HACS
 
-We recommend installing Yakup Brand Icons via [Home Assistant Community Store](https://hacs.xyz)
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Yakup24&repository=yakup-brand-icons&category=frontend)
+We recommend installing BrandGlyphs via [Home Assistant Community Store](https://hacs.xyz)
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Yakup24&repository=brand-glyphs&category=frontend)
 
 After installing through HACS:
 1. Add the following lines to your `configuration.yaml`
@@ -116,7 +116,7 @@ To add custom repositories please follow [this guide](https://hacs.xyz/docs/faq/
 
 # User Manual
 
-#### Yakup Brand Icons use the prefix `phu:`
+#### BrandGlyphs uses the prefix `phu:`
 #### Append Name (of the icon) after `phu:`
 - Example: `phu:eggs` <img src="/icon-svg/eggs.svg" title="Preview" alt="Preview" width="24"/>
 - Example: `phu:chicken` <img src="/icon-svg/chicken.svg" title="Preview" alt="Preview" width="24"/>
@@ -135,7 +135,7 @@ entities:
     icon: 'phu:play'
     name: play 2
 show_header_toggle: false
-title: Yakup Brand Icons
+title: BrandGlyphs
 type: entities
 ```
 
@@ -168,7 +168,7 @@ Some addons (including official) have had some [cache issues since 2024.1.1]([ht
 2. Select on *Integrations*.
 3. From the top header bar (Integrations, Frontend), select *Frontend*.
 4. Search *custom-brand-icons* on the search bar.
-5. Select *Yakup Brand Icons*.
+5. Select *BrandGlyphs*.
 6. From the top right, select the 3 vertical dots which opens a dropdown menu.
 7. Select *Redownload*.
 8. **Hard reload** browser.
@@ -179,7 +179,7 @@ Some addons (including official) have had some [cache issues since 2024.1.1]([ht
 3. This should bring you back to /hacs/frontend
 4. From the top right, select the 3 vertical dots which opens a dropdown menu.
 5. Select on *Custom repositories*.
-6. Find *Yakup Brand Icons* and select it.
+6. Find *BrandGlyphs* and select it.
 7. On the bottom right, select the big blue *Download* icon.
 8. **Hard reload** browser.
 

@@ -1,4 +1,4 @@
-name: Build Yakup Brand Icons
+name: Build BrandGlyphs
 
 on:
   push:

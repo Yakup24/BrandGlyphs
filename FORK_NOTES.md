@@ -1,4 +1,4 @@
-# Yakup Brand Icons
+# BrandGlyphs
 
 This fork is based on `elax46/custom-brand-icons` and keeps the original icon
 prefix `phu:` for Home Assistant compatibility.
@@ -10,7 +10,7 @@ prefix `phu:` for Home Assistant compatibility.
 - validate icon filenames, SVG roots, path data, and generated dist output
 - keep the generated `dist/custom-brand-icons.js` compatible with existing
   dashboards
-- make project metadata clearly identify this fork as Yakup Brand Icons
+- make project metadata clearly identify this fork as BrandGlyphs
 
 ## Compatibility
 

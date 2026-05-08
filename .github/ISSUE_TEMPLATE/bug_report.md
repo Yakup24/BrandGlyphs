@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Help me improve Yakup Brand Icons
+about: Help me improve BrandGlyphs
 title: ''
 labels: bug
 assignees: elax46
